@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+<style>
+    /* Header */
+    header{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    
+    nav a{
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* Projects Section */
+    .Projects {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .Projects h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .projects-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .project-card {
+        background: white;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+
+    .project-card h3 {
+        margin: 0 0 15px 0;
+        color: #2c3e50;
+        font-size: 1.3em;
+    }
+
+    .project-card p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+        
+</style>
+
+</head>
+<body>
+    <header>
+        <div>My Website</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="Projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project-card">
+                    <h3>HTML Project</h3>
+                    <p>A foundational project built with clean HTML structure</p>
+                </div>
+                <div class="project-card">
+                    <h3>Portfolio</h3>
+                    <p>Showcase of my work and professional skills</p>
+                </div>
+                <div class="project-card">
+                    <h3>Calculator</h3>
+                    <p>Interactive calculator application with user-friendly interface</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

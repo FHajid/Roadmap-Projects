@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+    /* Header */
+    header{
+        display: flex;
+        text-align: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+    }
+    
+    nav a{
+        margin-left: 20px;
+        text-decoration: none;
+        color: black;
+    }
+
+    /* Articles Section */
+    .Articles {
+        padding: 40px 20px;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .Articles h2 {
+        text-align: center;
+        margin-bottom: 40px;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .articles-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+    }
+
+    .article-card {
+        background: white;
+        border-radius: 8px;
+        padding: 25px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        cursor: pointer;
+    }
+
+    .article-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+    }
+
+    .article-card h3 {
+        margin: 0 0 15px 0;
+        color: #2c3e50;
+        font-size: 1.3em;
+    }
+
+    .article-card .date {
+        color: #999;
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .article-card p {
+        color: #666;
+        line-height: 1.6;
+        margin: 0;
+    }
+        
+</style>
+
+</head>
+<body>
+    <header>
+        <div>My Website</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div class="Articles">
+            <h2>Articles</h2>
+            <div class="articles-container">
+                <div class="article-card">
+                    <h3>Getting Started with HTML</h3>
+                    <div class="date">February 15, 2026</div>
+                    <p>Learn the fundamentals of HTML and how to structure your web pages effectively.</p>
+                </div>
+                <div class="article-card">
+                    <h3>CSS Styling Tips</h3>
+                    <div class="date">February 10, 2026</div>
+                    <p>Discover best practices for writing clean and maintainable CSS code.</p>
+                </div>
+                <div class="article-card">
+                    <h3>Web Design Trends 2026</h3>
+                    <div class="date">February 5, 2026</div>
+                    <p>Explore the latest trends shaping modern web design and user experience.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+</body>
+</html>

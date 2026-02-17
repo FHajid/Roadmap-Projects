@@ -5,119 +5,102 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portofolio</title>
 
+    <meta 
+        name="Title"
+        content="My Portfolio Website">
+
+    <meta 
+        name="Description"
+        content="This is my personal portfolio website showcasing my projects, skills, and experience as a frontend developer.">
+    
+
+    <meta
+        name="Keywords"
+        content="portfolio, frontend developer, projects, skills, experience, web development">
+    
+
     <style>
-    * {
-        box-sizing: border-box;
-        font-family: Arial, sans-serif;
-    }
-
-    body {
-        margin: 0;
-        background-color: #f4f4f4;
-        color: #333;
-    }
-
-    /* Header */
-    header {
+        
+        /* Header */
+        header{
         display: flex;
+        text-align: center;
         justify-content: space-between;
-        align-items: center;
-        padding: 16px 40px;
-        background-color: #ffffff;
-        border-bottom: 1px solid #ddd;
-    }
+        padding: 10px 20px;
 
-    nav a {
-        margin-left: 20px;
-        text-decoration: none;
-        color: #333;
-        font-weight: 500;
-    }
+        
+        }
+        
+        nav a{
+            margin-left: 20px;
+            text-decoration: none;
+            color: black;
+        }
+        
+        /* Section */
+        section {
+            width: auto;
+            height: 160px;
+            margin: 40px 20px;
+            padding: 10px;
 
-    nav a:hover {
-        color: #007bff;
-    }
+            text-align: center;
+        }
 
-    /* Hero */
-    .hero {
-        background-color: #ffffff;
-        margin: 30px;
-        padding: 40px;
-        text-align: center;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        .Review{
+            display: flex;
+            justify-content: space-evenly;
+            height: 80px;
+            text-align: center;
+            align-items: center;
 
-    /* Main layout */
-    main {
-        display: flex;
-        gap: 20px;
-        margin: 30px;
-    }
+        }
 
-    main > div {
-        background-color: #ffffff;
-        padding: 20px;
-        flex: 1;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        /*main*/
+        main{
+            display: flex;
+            margin: 0px;
+            padding: 20px;
+            justify-content: space-between;
+            text-align: center;
+            align-items: center;
 
-    h2 {
-        margin-top: 0;
-        border-bottom: 2px solid #eee;
-        padding-bottom: 8px;
-        text-align: center;
-    }
+            border-top: 2px solid black;
+            border-bottom: 2px solid black;
+            }
 
-    ul {
-        padding-left: 20px;
-        text-align: left;
-    }
+            
 
-    /* Review section */
-    section {
-        margin: 30px;
-    }
+            .Work-experience{
+            padding: 0 10px;
+            }
 
-    .Review {
-        display: flex;
-        gap: 20px;
-        margin-top: 20px;
-    }
+            .education, .Projects{
+            padding: 0px 20px;
+            }
 
-    .Review div {
-        flex: 1;
-        background-color: #ffffff;
-        padding: 20px;
-        text-align: center;
-        border-radius: 12px;
-        box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-    }
+        /*Fotter*/
+        footer{
+            text-align: center;
+            padding: 10px;
+        }
 
-    /* Footer */
-    footer {
-        text-align: center;
-        padding: 20px;
-        color: #777;
-    }
-</style>
-
+    </style>
 
 </head>
 <body>
     <header>
         <div>My Website</div>
         <nav>
-            <a href="">Home</a>
-            <a href="">Project</a>
-            <a href="">Articles</a>
-            <a href="">Contact</a>
+            <a href="index.html">Home</a>
+            <a href="project.html">Project</a>
+            <a href="articles.html">Articles</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
     <section class="hero">
-        <h1>FARHAN HAJID</h1>
-        <p>A Frontend page Using simple HTML and Css stlye</p>
+        <h1>Frontend Developer</h1>
+        <p>HTML only with proper Layout, no styling</p>
     </section>
 
     <main>
@@ -125,6 +108,8 @@
             <h2>Projects</h2>
             <ul>
                 <li>HTML Project</li>
+                <li>Portfolio</li>
+                <li>Calculator</li>
             </ul>
         </div>
         <div class="Work-experience">
