@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Changelog</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+    padding: 40px 20px;
+}
+
+.container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+header {
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+/* Timeline Logic */
+.timeline {
+    position: relative;
+    border-left: 2px solid var(--border);
+    padding-left: 30px;
+    margin-left: 10px;
+}
+
+.release {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+/* The Dot on the Timeline */
+.release::before {
+    content: "";
+    position: absolute;
+    left: -41px;
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border: 2px solid var(--primary);
+    border-radius: 50%;
+}
+
+.meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.version {
+    background: #dbeafe;
+    color: var(--primary);
+    padding: 2px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.date {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+h3 {
+    margin: 0 0 10px 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+/* Status Indicators */
+li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>Changelog</h1>
+            <p>Latest updates and improvements to the project.</p>
+        </header>
+
+        <section class="timeline">
+            <article class="release">
+                <div class="meta">
+                    <span class="version">v1.2.0</span>
+                    <span class="date">March 27, 2026</span>
+                </div>
+                <div class="content">
+                    <h3>The "Spring Cleaning" Update</h3>
+                    <ul>
+                        <li class="added">Added dark mode support.</li>
+                        <li class="fixed">Fixed a bug where the sidebar wouldn't collapse on mobile.</li>
+                        <li class="improved">Optimized image loading speeds by 40%.</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="release">
+                <div class="meta">
+                    <span class="version">v1.1.5</span>
+                    <span class="date">February 10, 2026</span>
+                </div>
+                <div class="content">
+                    <h3>Security Patch</h3>
+                    <ul>
+                        <li class="fixed">Patched a vulnerability in the login authentication flow.</li>
+                    </ul>
+                </div>
+            </article>
+        </section>
+    </div>
+
+</body>
+</html>
