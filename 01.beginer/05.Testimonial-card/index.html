@@ -5,12 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Testimonial Card</title>
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <style>
 
         main {
-            width: 80%;
+            max-width: 800px; 
+            
+            width: 90%; 
+            
             margin: 0 auto;
             background-color: #f5f5f5;
+            
+            padding: 20px;
+            box-sizing: border-box; 
+        }
+
+        p {
+            padding: 0px 5px;
         }
 
         /* Upper Card */
@@ -19,25 +30,54 @@
             justify-content: space-between;
             align-items: center;
         }
+
+        .text-upper-card {
+        padding: 20px;
+        background-color: #262626; /* Darker grey to match your screenshot */
+        color: white;
+        border-radius: 25px;
+        position: relative; /* This is required for the tail to stick to it */
+        max-width: 400px;
+    }
+
+    /* Creating the corner/tail */
+    .text-upper-card::after {
+        content: "";
+        position: absolute;
+        bottom: -15px; /* Pulls it below the bottom edge */
+        left: 70px;    /* Positions it from the left side */
+        
+        /* This creates a triangle */
+        border-left: 15px solid transparent;
+        border-right: 15px solid transparent;
+        border-top: 15px solid #262626; /* Must match the background-color above */
+    }
+
+        .text-right-upper-card {
+            padding: 10px;
+            color: black;
+            border-radius: 25px;
+        }
+
         .left-upper-card {
             width: 50%;
-            height: 200px;
+            height: auto;
             padding: 0px 20px;
-            margin: 0px 10px;
+            margin: 10px 10px;
         }
         .right-upper-card {
             width: 50%;
-            height: 200px;
+            height: auto;
             border: 2px solid #000000;
             border-radius: 25px;
-            margin: 0px 10px;
+            margin: 10px 10px;
         }
 
         .profile-upper-card {
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 10px 20px;
+            padding: 2px 0px;
         }
 
         
@@ -59,13 +99,17 @@
             padding: 20px;
             background-color: #4d4d4d;
             border-radius: 25px;
-            margin: 0px 10px;
+            margin: 0px 10px;;
+        }
+
+        .middle-card-info h2, .middle-card-info p {
+            color: white;
         }
 
 
         /* Bottom Card */
         .bottom-card {
-            height: 200px;
+            height: auto;
             border-radius: 25px;
             border: 2px solid #050505;
             margin: 20px;
@@ -75,6 +119,14 @@
             flex-direction: column;
         }
 
+        .bottom-card h3 {
+            padding: 0px 20px;
+            text-align: center;
+        }
+
+        .bottom-card img {
+            margin: 15px 0px;
+        }
 
 
     </style>
@@ -87,12 +139,16 @@
 
             <div class="left-upper-card">
                 <div class="text-upper-card">
-                    <p>text</p>
+                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Corrupti praesentium labore aspernatur accusamus, 
+                        tempora nam laudantium quasi amet 
+
+                    </p>
                 </div>
                 <div class="profile-upper-card">
-                    <img src="/01.beginer/00.assets/carol.jpg" alt="carol" width="100px" height="100px" style="border-radius: 50px;">
+                    <img src="/01.beginer/00.assets/carol.jpg" alt="carol" width="85px" height="85px" style="border-radius: 50px;">
                    <span>
-                    <p>Carol Danvers</p>
+                    <h3>Carol Danvers</h3>
                     <p>Junior developer</p>
                     </span>
                 </div>
@@ -100,13 +156,15 @@
 
             <div class="right-upper-card">
                 <div class="text-right-upper-card">
-                    <p>Right Upper Card Content</p>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                        Corrupti praesentium labore aspernatur accusamus, 
+                        </p>
                 </div>
 
                 <div class="profile-upper-card">
-                    <img src="/01.beginer/00.assets/carol.jpg" alt="carol" width="100px" height="100px" style="border-radius: 50px;">
+                    <img src="/01.beginer/00.assets/carol.jpg" alt="carol" width="85px" height="85px" style="border-radius: 50px;">
                     <span>
-                    <p>Carol Danvers</p>
+                    <h3>Carol Danvers</h3>
                     <p>Junior developer</p>
                     </span>
                 </div>
@@ -123,6 +181,11 @@
 
             <div class="middle-card-info">
                 <h2>Carol Danvers</h2>
+                <span class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></span>
+                <span class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></span>
+                <span class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></span>
+                <span class="fa-solid fa-star" style="color: rgb(255, 212, 59);"></span>
+                <span class="fa fa-star checked"></span>
                 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas, voluptate.</p>
 
             </div>
