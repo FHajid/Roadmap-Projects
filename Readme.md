@@ -18,4 +18,7 @@ ALL THE FILES For Roadmap.sh
 - 5. Testimonial-Card
 = https://roadmap.sh/projects/testimonial-cards
 
-- 6.
+- 6. Date-Picker
+= https://roadmap.sh/projects/datepicker-ui
+
+-7.
