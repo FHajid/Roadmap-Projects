@@ -3,16 +3,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessible Form UI</title>
+    <title>Accessible Registration Form</title>
+    <style>
+        :root {
+            --primary-color: #004a99;
+            --error-color: #d32f2f;
+            --text-color: #212121;
+            --border-focus: #005fcc;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            padding: 2rem;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        input {
+            padding: 0.75rem;
+            font-size: 1rem;
+            border: 2px solid #767676;
+            border-radius: 4px;
+        }
+
+        /* Focus State Styling */
+        input:focus, button:focus {
+            outline: 3px solid var(--border-focus);
+            outline-offset: 2px;
+        }
+
+        .password-container {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .password-container input {
+            flex-grow: 1;
+        }
+
+        .toggle-btn {
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            background: #f0f0f0;
+            border: 2px solid #767676;
+            border-radius: 4px;
+        }
+
+        /* Error Message Styling */
+        .error-message {
+            color: var(--error-color);
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+            min-height: 1.2rem; /* Reserves space to prevent layout shift */
+            font-weight: bold;
+        }
+
+        button[type="submit"] {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            font-size: 1.1rem;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
 <body>
 
-    <main>
-        <h1>Accessible Form UI</h1>
-        <p>Hey How you doing, How about we see you at the date below.</p>
-        <label for="datePicker">Select a date:</label>
-        <input type="date" id="datePicker" name="datePicker">
-    </main>gt
+    <h1>Create Account</h1>
+    <form id="registrationForm" novalidate>
+        
+        <!-- Standard Text Input with Labeling -->
+        <div class="form-group">
+            <label for="full-name">Full Name</label>
+            <input 
+                type="text" 
+                id="full-name" 
+                name="name" 
+                required 
+                aria-required="true"
+                autocomplete="name">
+            <div id="name-error" class="error-message" role="alert"></div>
+        </div>
 
+        <!-- Input with ARIA Describedby for Errors -->
+        <div class="form-group">
+            <label for="email">Email Address</label>
+            <input 
+                type="email" 
+                id="email" 
+                name="email" 
+                required 
+                aria-required="true"
+                aria-describedby="email-error"
+                autocomplete="email">
+            <div id="email-error" class="error-message" role="alert"></div>
+        </div>
+
+        <!-- Password with Interactive Toggle Element -->
+        <div class="form-group">
+            <label for="password">Password</label>
+            <div class="password-container">
+                <input 
+                    type="password" 
+                    id="password" 
+                    name="password" 
+                    required 
+                    aria-required="true"
+                    aria-describedby="password-error">
+                <button 
+                    type="button" 
+                    id="togglePassword" 
+                    class="toggle-btn"
+                    aria-label="Show password">
+                    Show
+                </button>
+            </div>
+            <div id="password-error" class="error-message" role="alert"></div>
+        </div>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <script>
+        const form = document.getElementById('registrationForm');
+        const toggleBtn = document.getElementById('togglePassword');
+        const passwordInput = document.getElementById('password');
+
+        // Toggle Password Visibility Logic
+        toggleBtn.addEventListener('click', () => {
+            const isPassword = passwordInput.type === 'password';
+            passwordInput.type = isPassword ? 'text' : 'password';
+            
+            // Accessibility: Update ARIA label and Text
+            toggleBtn.textContent = isPassword ? 'Hide' : 'Show';
+            toggleBtn.setAttribute('aria-label', isPassword ? 'Hide password' : 'Show password');
+        });
+
+        // Basic Validation to demonstrate Error Messaging & aria-invalid
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = document.getElementById('email');
+            const emailError = document.getElementById('email-error');
+
+            if (!email.value.includes('@')) {
+                email.setAttribute('aria-invalid', 'true');
+                emailError.textContent = 'Please enter a valid email address.';
+            } else {
+                email.setAttribute('aria-invalid', 'false');
+                emailError.textContent = '';
+                alert('Form submitted successfully (Accessibility validated!)');
+            }
+        });
+    </script>
 </body>
 </html>
