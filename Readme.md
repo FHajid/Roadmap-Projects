@@ -28,4 +28,4 @@ testing
 
 - 8. New testing A daily login ~
 
-- 8. Image Grid Layout
+- 8. Image Grid Layout faily login 
