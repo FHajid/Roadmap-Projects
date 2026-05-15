@@ -26,6 +26,5 @@ testing
 = https://roadmap.sh/projects/accessible-form-ui
 
 
-- 8. New testing A daily login ~
-
-- 8. Image Grid Layout faily login 
+- 8. Image Grid Layout  
+= https://roadmap.sh/projects/image-grid
