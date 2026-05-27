@@ -1,11 +1,148 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tooltip UI</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Navigation Tooltip</title>
+  <style>
+    /* Reset & Gaya Dasar Halaman */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+
+    h1 {
+      margin-bottom: 80px;
+      font-weight: 600;
+      color: #2c3e50;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    /* CONTAINER NAVIGASI */
+    .navigation {
+      display: flex;
+      gap: 15px;
+      background-color: #1e293b; /* Warna gelap premium */
+      padding: 12px 24px;
+      border-radius: 50px; /* Membuat sudut elips melengkung */
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    /* KUNCI UTAMA POSITIONING */
+    .nav-item {
+      position: relative; /* Menjadi patokan koordinat (0,0) untuk tooltip absolute */
+      display: inline-block;
+    }
+
+    /* Gaya Tombol/Link Navigasi */
+    .nav-item a {
+      display: block;
+      color: #cbd5e1;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-weight: 500;
+      border-radius: 25px;
+      transition: all 0.3s ease;
+    }
+
+    /* Efek Hover untuk Tombol Navigasi */
+    .nav-item:hover a {
+      color: #ffffff;
+      background-color: #334155;
+    }
+
+    /* DESAIN KOTAK TOOLTIP */
+    .tooltip {
+      position: absolute;
+      bottom: 100%;       /* Memaksa posisi tooltip naik tepat di atas tombol */
+      left: 50%;          /* Menggeser titik awal ke tengah-tengah tombol */
+      
+      /* Gabungan rumus posisi: Center-X (-50%), Jarak-Y (-12px), dan Ukuran Awal (scale 0) */
+      transform: translateX(-50%) translateY(-12px) scale(0);
+      transform-origin: bottom center; /* Animasi membesar muncul dari arah bawah (titik segitiga) */
+      
+      background-color: #ff4757; /* Warna merah atraktif */
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 13px;
+      font-weight: 500;
+      white-space: nowrap; /* Mencegah teks patah/turun ke bawah */
+      box-shadow: 0 5px 15px rgba(255, 71, 87, 0.3);
+      
+      /* Kondisi Awal: Sembunyikan total */
+      visibility: hidden;
+      opacity: 0;
+      
+      /* Efek Transisi Membal (Cubic Bezier) */
+      transition: transform 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                  opacity 0.2s ease, 
+                  visibility 0.2s ease;
+      
+      pointer-events: none; /* Mencegah bug kursor kedep-kedip saat menyentuh sela tooltip */
+    }
+
+    /* MEMBUAT SEGITIGA KECIL DI BAWAH TOOLTIP */
+    .tooltip::after {
+      content: "";
+      position: absolute;
+      top: 100%; /* Menempel di batas paling bawah kotak tooltip */
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px;
+      border-style: solid;
+      /* Hanya bagian atas yang diberi warna merah, sisanya transparan */
+      border-color: #ff4757 transparent transparent transparent; 
+    }
+
+    /* TRIGER HOVER: Munculkan Tooltip Saat Menu Disentuh */
+    .nav-item:hover .tooltip {
+      visibility: visible;
+      opacity: 1;
+      /* Kembalikan ukuran ke normal (scale 1) */
+      transform: translateX(-50%) translateY(-12px) scale(1);
+    }
+  </style>
 </head>
 <body>
+
+  <h1>CSS-Only Tooltip Showcase</h1>
+
+  <nav class="navigation">
     
+    <div class="nav-item">
+      <a href="#">Dashboard</a>
+      <span class="tooltip">Lihat statistik & performa</span>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">Messages</a>
+      <span class="tooltip">3 Pesan baru belum dibaca</span>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">Analytics</a>
+      <span class="tooltip">Buka data grafik bulanan</span>
+    </div>
+
+    <div class="nav-item">
+      <a href="#">Settings</a>
+      <span class="tooltip">Konfigurasi akun & sistem</span>
+    </div>
+
+  </nav>
+
 </body>
 </html>
